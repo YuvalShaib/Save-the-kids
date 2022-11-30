@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="LIVES">3</integer>
+    <integer name="WITCHSLANES">3</integer>
+    <integer name="ROWSNUMBER">5</integer>
+
+
+</resources>
