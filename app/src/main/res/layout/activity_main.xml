@@ -26,34 +26,33 @@
 
                 <ImageView
                     android:id="@+id/game_IMG_witch00"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-
                     android:background="@drawable/witch"/>
 
                 <ImageView
                     android:id="@+id/game_IMG_witch10"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/witch"/>
                 <ImageView
                     android:id="@+id/game_IMG_witch20"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/witch"/>
                 <ImageView
                     android:id="@+id/game_IMG_witch30"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/witch"/>
                 <ImageView
                     android:id="@+id/game_IMG_witch40"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/witch"/>
             </LinearLayout>
@@ -63,16 +62,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:paddingHorizontal="16dp">
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/game_IMG_witch01"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="@drawable/witch"
-                    android:scaleType="fitXY" />
+                    android:background="@drawable/witch"/>
 
                 <ImageView
                     android:id="@+id/game_IMG_witch11"
@@ -108,16 +105,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:paddingHorizontal="16dp">
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/game_IMG_witch02"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="@drawable/witch"
-                    android:scaleType="fitXY" />
+                    android:background="@drawable/witch" />
 
                 <ImageView
                     android:id="@+id/game_IMG_witch12"
@@ -147,6 +142,84 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/witch" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/game_IMG_witch03"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
+
+                <ImageView
+                    android:id="@+id/game_IMG_witch13"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
+                <ImageView
+                    android:id="@+id/game_IMG_witch23"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
+                <ImageView
+                    android:id="@+id/game_IMG_witch33"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
+                <ImageView
+                    android:id="@+id/game_IMG_witch43"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/game_IMG_witch04"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
+
+                <ImageView
+                    android:id="@+id/game_IMG_witch14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
+                <ImageView
+                    android:id="@+id/game_IMG_witch24"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
+                <ImageView
+                    android:id="@+id/game_IMG_witch34"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
+                <ImageView
+                    android:id="@+id/game_IMG_witch44"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/witch"/>
             </LinearLayout>
 
 
@@ -191,6 +264,36 @@
                 app:srcCompat="@drawable/heart" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="2dp">
+
+        <TextView
+            android:id="@+id/game_TXT_txtscore"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="score:"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:layout_marginLeft="10dp"
+            android:paddingBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/game_TXT_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+
+    </LinearLayout>
+
 
     <ImageButton
         android:id="@+id/game_IMG_arrowLeft"
@@ -237,7 +340,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:background="@drawable/kids"/>
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -245,8 +348,232 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:visibility="visible"
+            android:background="@drawable/kids"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/game_IMG_kids4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:visibility="invisible"
             android:background="@drawable/kids"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/game_IMG_kids5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:background="@drawable/kids"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="390dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_above="@+id/game_LOT_kids">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/game_IMG_bread00"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread" />
+
+            <ImageView
+                android:id="@+id/game_IMG_bread10"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread20"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread30"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread40"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/game_IMG_bread01"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+
+            <ImageView
+                android:id="@+id/game_IMG_bread11"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread21"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread31"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread41"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/game_IMG_bread02"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+
+            <ImageView
+                android:id="@+id/game_IMG_bread12"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread22"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread32"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread42"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/game_IMG_bread03"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+
+            <ImageView
+                android:id="@+id/game_IMG_bread13"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread23"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread33"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread43"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/game_IMG_bread04"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+
+            <ImageView
+                android:id="@+id/game_IMG_bread14"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread24"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread34"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+            <ImageView
+                android:id="@+id/game_IMG_bread44"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bread"/>
+        </LinearLayout>
+
 
 
     </LinearLayout>

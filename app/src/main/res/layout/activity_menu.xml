@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:background="@drawable/background_house">
+
+    <TextView
+        android:id="@+id/menu_LBL_mode"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:padding="10dp"
+        android:text="Mode:"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+
+    
+    <RadioGroup
+        android:id="@+id/menu_RGP_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/menu_LBL_mode"
+        android:layout_alignTop="@+id/menu_LBL_mode"
+        android:outlineSpotShadowColor="@color/white"
+        >
+        <RadioButton
+            android:id="@+id/menu_RBN_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buttons"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+        <RadioButton
+            android:id="@+id/menu_RBN_sensors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sensors"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/menu_LBL_speed"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/menu_LBL_mode"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:text="Speed:"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/menu_RGP_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/menu_LBL_speed"
+        android:layout_alignTop="@+id/menu_LBL_speed"
+        android:outlineSpotShadowColor="@color/white"
+        >
+
+        <RadioButton
+            android:id="@+id/menu_RBN_slow"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:text="Slow"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/menu_RBN_fast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fast"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/menu_ETX_name"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/menu_RGP_speed"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/menu_BTN_start"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"
+        android:text="Start"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:background="@color/teal_200" />
+
+    <Button
+        android:id="@+id/menu_BTN_records"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/menu_BTN_start"
+        android:layout_centerHorizontal="true"
+        android:text="Records"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"/>
+
+
+
+</RelativeLayout>
