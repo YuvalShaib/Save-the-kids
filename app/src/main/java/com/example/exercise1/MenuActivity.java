@@ -2,6 +2,7 @@ package com.example.exercise1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,13 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
+    private static String strName;
     Button menu_BTN_start;
     Button menu_BTN_records;
     RadioGroup menu_RGP_mode;
     RadioGroup menu_RGP_speed;
     private static EditText menu_ETX_name;
+
 
 
     private static int period=1000;
@@ -43,7 +47,6 @@ public class MenuActivity extends AppCompatActivity {
         menu_RGP_speed = (RadioGroup)findViewById(R.id.menu_RGP_speed);
         menu_ETX_name =findViewById(R.id.menu_ETX_name);
 
-
     }
 
     private void initViews() {
@@ -68,19 +71,26 @@ public class MenuActivity extends AppCompatActivity {
 
                 }
                 else if(checkedId == R.id.menu_RBN_sensors) {
-                    //invisible arrows
-                    //sensorsfunction
+
                 }
 
             }
         });
 
 
-
         menu_BTN_start.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+                strName= menu_ETX_name.getText().toString();
+                if(strName.isEmpty()) {
+                    Toast t = Toast.makeText(view.getContext(), "Please enter name", Toast.LENGTH_SHORT);
+                    t.show();
+                    return;
+                }
+
                 openNewGameActivity();
+
             }
         });
 
@@ -88,7 +98,6 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){openNewRecordsActivity();}
         });
-
 
     }
 
@@ -102,15 +111,13 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public static EditText getMenu_ETX_name() {
-        return menu_ETX_name;
+
+    public static String getEName(){
+        return strName;
     }
 
     public static String getName() {
         return menu_ETX_name.getText().toString();
     }
 
-//    public static String getName(EditText e) {
-//        return e.getText().toString();
-//    }
 }

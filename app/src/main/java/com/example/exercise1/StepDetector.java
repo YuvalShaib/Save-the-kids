@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.widget.ImageView;
 
 public class StepDetector {
     private StepCallback stepCallback;
@@ -19,6 +20,7 @@ public class StepDetector {
     private SensorEventListener sensorEventListener;
 
     public StepDetector(Context context, StepCallback _stepCallback) {
+
         sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         this.stepCallback = _stepCallback;
@@ -42,18 +44,15 @@ public class StepDetector {
         };
     }
 
-    private void calculateStep(float x, float y) {
-        if (System.currentTimeMillis() - timestemp > 500) {
-            timestemp = System.currentTimeMillis();
-            if (x > 6.0) {
-                stepCountX++;
-                if (stepCallback != null)
-                    stepCallback.stepX();
+    private void calculateStep( float x, float y) {
+
+        if (Math.abs(x) > Math.abs(y)) {
+            if (x < 0) {
+                //move right
+
             }
-            if (y > 6.0) {
-                stepCountY++;
-                if (stepCallback != null)
-                    stepCallback.stepY();
+            if (x > 0) {
+                //move left
             }
         }
     }

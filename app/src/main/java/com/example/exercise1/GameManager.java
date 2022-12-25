@@ -15,7 +15,6 @@ public class GameManager {
     Random random = new Random();
     private boolean[][] witchesVisibility;
     private boolean[][] breadsVisibility;
-
     MediaPlayer mp;
 
     private static int sumBreads = 0;
@@ -51,6 +50,10 @@ public class GameManager {
 
         this.vibrator=vibrator;
         this.toast=toast;
+    }
+
+    public static void resetGame(){
+        sumBreads = 0;
     }
 
     public void moveKids(int direction) {
@@ -139,7 +142,6 @@ public class GameManager {
     }
 
 
-
     private void checkPickBreads() {
         if(breadsVisibility[rows-1][kidsLocation])
         {
@@ -158,7 +160,6 @@ public class GameManager {
     public boolean[][] getBreadsVisibility(){
         return breadsVisibility;
     }
-
 
 
 

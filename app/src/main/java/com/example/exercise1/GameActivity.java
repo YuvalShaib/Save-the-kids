@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -34,15 +35,14 @@ public class GameActivity extends AppCompatActivity {
     public ArrayList<Record> records;
 
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(savedInstanceState != null){
+            return;
+        }
 
         int rows = getResources().getInteger(R.integer.ROWSNUMBER);
         int cols = getResources().getInteger(R.integer.WITCHSLANES);
@@ -64,15 +64,17 @@ public class GameActivity extends AppCompatActivity {
         gameManager = new GameManager(lives, rows, cols, v, t, mp);
 
         startTimer();
+
+        //initStepDetector();
     }
 
     private void initStepDetector() {
         stepDetector = new StepDetector(this, new StepCallback() {
             @Override
-            public void stepX() { }
+            public void stepX() { game_IMG_arrowRight.setOnClickListener(view -> moveKids(1)); }
 
             @Override
-            public void stepY() { }
+            public void stepY() { game_IMG_arrowRight.setOnClickListener(view -> moveKids(1));}
         });
     }
 
@@ -116,11 +118,13 @@ public class GameActivity extends AppCompatActivity {
 
     private void initViews() {
 
-        records =Fragment_list.getRecords();
+        records = Fragment_list.getRecords();
 
         game_IMG_arrowLeft.setOnClickListener(view -> moveKids(-1));
 
         game_IMG_arrowRight.setOnClickListener(view -> moveKids(1));
+
+
 
     }
 
@@ -173,22 +177,17 @@ public class GameActivity extends AppCompatActivity {
         }
 
         if(gameManager.getLives() == 0) {
-            checkScorePlayer();
-            onStop();
+            timer.cancel();
+            openNewActivity();
         }
     }
 
-    private void checkScorePlayer() {
-        //Record record = new Record(String.valueOf(MenuActivity.getMenu_ETX_name()), gameManager.getSumBreads());
-        //records.add(new Record("ds", 3));
-        //records.add(record);
-        for (int i = 0; i < 10; i++) {
-
-        }
-    }
 
     public void openNewActivity(){
+        Log.d("", "openNewActivity: " + records);
         Intent intent = new Intent(this, GameOverActivity.class);
+        //intent.putExtra( "score", gameManager.getSumBreads());
+
         startActivity(intent);
     }
 
@@ -202,7 +201,8 @@ public class GameActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         timer.cancel();
-        openNewActivity();
+        // openNewActivity();
+       // stepDetector.stop();
     }
 
     @Override
@@ -211,6 +211,8 @@ public class GameActivity extends AppCompatActivity {
         timer.cancel();
     }
 
-   // public int getSumBreads() { return sumBreads;  }
 
+    public ImageView[] getGame_LOT_kids() {
+        return game_LOT_kids;
+    }
 }
