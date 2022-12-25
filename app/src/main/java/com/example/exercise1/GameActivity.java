@@ -2,7 +2,12 @@ package com.example.exercise1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -17,7 +22,8 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GameActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity implements SensorEventListener {
+
     TextView game_TXT_score;
     ImageButton game_IMG_arrowRight;
     ImageButton game_IMG_arrowLeft;
@@ -28,12 +34,14 @@ public class GameActivity extends AppCompatActivity {
     private ImageView[][] game_IMG_breads;
     private GameManager gameManager;
     private Timer timer;
+    public static boolean sensorsEnabled = true;
 
 
-    private StepDetector stepDetector;
 
     public ArrayList<Record> records;
 
+    private SensorManager sensorManager;
+    private Sensor accelerometer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +64,8 @@ public class GameActivity extends AppCompatActivity {
         game_LOT_witches = new ImageView[rows][cols];
         game_IMG_breads = new ImageView[rows][cols];
 
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         findViews();
         initViews();
@@ -65,18 +75,8 @@ public class GameActivity extends AppCompatActivity {
 
         startTimer();
 
-        //initStepDetector();
     }
 
-    private void initStepDetector() {
-        stepDetector = new StepDetector(this, new StepCallback() {
-            @Override
-            public void stepX() { game_IMG_arrowRight.setOnClickListener(view -> moveKids(1)); }
-
-            @Override
-            public void stepY() { game_IMG_arrowRight.setOnClickListener(view -> moveKids(1));}
-        });
-    }
 
     private void findViews() {
 
@@ -192,6 +192,24 @@ public class GameActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if (sensorsEnabled) {
+            sensorManager.registerListener(this, accelerometer,
+                    SensorManager.SENSOR_DELAY_GAME);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (sensorsEnabled){
+            sensorManager.unregisterListener(this);
+        }
+    }
+
+
+    @Override
     protected void onRestart() {
         super.onRestart();
         startTimer();
@@ -214,5 +232,28 @@ public class GameActivity extends AppCompatActivity {
 
     public ImageView[] getGame_LOT_kids() {
         return game_LOT_kids;
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
+            Log.d("sensor", "sensor location x " + x);
+            // Use the x-axis acceleration to move the object left or right
+            if (x > 1 && x < 2) {
+                // Tilt the phone to the right, move the object to the right
+                moveKids(-1);
+            } else if (x < -1 && x > -2) {
+                // Tilt the phone to the left, move the object to the left
+                moveKids(1);
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+
     }
 }

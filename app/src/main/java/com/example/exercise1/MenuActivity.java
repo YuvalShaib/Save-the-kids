@@ -68,12 +68,12 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 if(checkedId == R.id.menu_RBN_buttons) {
+                    GameActivity.sensorsEnabled = false;
 
                 }
                 else if(checkedId == R.id.menu_RBN_sensors) {
-
+                    GameActivity.sensorsEnabled = true;
                 }
-
             }
         });
 

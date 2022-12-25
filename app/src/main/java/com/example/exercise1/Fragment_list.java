@@ -136,7 +136,18 @@ public class Fragment_list extends Fragment {
 
     public void addRecords() {
         ArrayList<String> locations = new ArrayList<>();
+        locations.add("33.0686836, 34.98917");
+        locations.add("33.0686836, 34.9847");
+        locations.add("33.0686836, 34.98617");
+        locations.add("33.0684336, 34.98267");
+        locations.add("33.068336, 34.98257");
+        locations.add("33.0686836, 34.98517");
+        locations.add("33.0486836, 34.985343");
+        locations.add("33.0686843, 34.98417");
+        locations.add("33.068684, 34.982342");
         locations.add("33.0686836, 34.98217");
+
+
        ArrayList<String> names= new ArrayList<>();
        names.add("yuval");
        names.add("or");
@@ -152,7 +163,7 @@ public class Fragment_list extends Fragment {
             for (int i = 0; i < 10; i++)  {
                 int rec = 11 - i;
                 String location = "";
-                insertRecord(new Record(names.get(i), rec , location));
+                insertRecord(new Record(names.get(i), rec , locations.get(i)));
             }
         }
 
